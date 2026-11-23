@@ -267,6 +267,13 @@ main {
     }
 
 
+    /* Show Menu When Active */
+
+    .nav-style.active {
+        display: flex;
+    }
+
+
     /* Mobile Banner */
 
     .banner {
