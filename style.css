@@ -429,3 +429,176 @@ main {
     }
 
 }
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 580px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 6%;
+
+    background-image: url("./images/cover.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Background Overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 253, 245, 0.98) 0%,
+        rgba(255, 253, 245, 0.90) 35%,
+        rgba(255, 253, 245, 0.45) 60%,
+        rgba(255, 253, 245, 0.05) 100%
+    );
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    width: 55%;
+    max-width: 700px;
+
+    text-align: left;
+}
+
+
+/* Welcome Text */
+
+.hero-welcome {
+    color: #064e3b;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+/* Main Heading */
+
+.hero-content h1 {
+    color: #064e3b;
+    font-size: 55px;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero-content h1 span {
+    color: #a77b18;
+}
+
+
+/* Description */
+
+.hero-content h3 {
+    color: #064e3b;
+    font-size: 21px;
+}
+
+.hero-content p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* Buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.about-btn,
+.admission-btn {
+    display: inline-block;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.about-btn {
+    background-color: #064e3b;
+    color: white;
+}
+
+.admission-btn {
+    background-color: #facc15;
+    color: #064e3b;
+}
+
+.about-btn:hover,
+.admission-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   Mobile Hero Section
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .hero {
+        min-height: 500px;
+        padding: 45px 20px;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        background: rgba(255, 253, 245, 0.82);
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-content h3 {
+        font-size: 17px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-welcome {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-btn,
+    .admission-btn {
+        font-size: 13px;
+        padding: 11px 13px;
+    }
+
+}
