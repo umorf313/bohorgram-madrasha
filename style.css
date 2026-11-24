@@ -204,6 +204,7 @@ main {
 
 @media screen and (max-width: 768px) {
 
+
     /* Mobile Navbar */
 
     .navbar {
@@ -215,17 +216,20 @@ main {
     }
 
 
-    /* Toggle Button - Left Side */
+    /* Toggle Button */
 
     .menu-toggle {
         display: block;
         order: 1;
         margin: 0;
         flex-shrink: 0;
+
+        position: relative;
+        z-index: 1002;
     }
 
 
-    /* Logo and Name - Center */
+    /* Logo and Name */
 
     .logo {
         order: 2;
@@ -244,7 +248,7 @@ main {
     }
 
 
-    /* Donate Button - Right Side */
+    /* Donate Button */
 
     .donate-button {
         order: 3;
@@ -254,23 +258,114 @@ main {
     }
 
 
-    /* Navigation Menu */
+    /* =========================
+       Side Drawer Menu
+    ========================= */
 
     .nav-style {
-        display: none;
-        order: 4;
-        width: 100%;
+        display: flex;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: min(75%, 340px);
+        height: 100vh;
+        height: 100dvh;
+
+        background-color: #fffdf5;
+
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
-        padding: 20px 0;
+        justify-content: flex-start;
+
+        gap: 0;
+        padding: 85px 25px 30px;
+
+        margin: 0;
+
+        overflow-y: auto;
+
+        z-index: 1001;
+
+        transform: translateX(-100%);
+        visibility: hidden;
+
+        transition:
+            transform 0.35s ease,
+            visibility 0.35s ease;
+
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
     }
 
 
-    /* Show Menu When Active */
+    /* Open Drawer */
 
     .nav-style.active {
-        display: flex;
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+
+    /* Drawer Menu Links */
+
+    .nav-style li {
+        width: 100%;
+        border-bottom: 1px solid #e5e1d5;
+    }
+
+    .link-style {
+        display: block;
+        width: 100%;
+
+        color: #064e3b;
+
+        font-size: 18px;
+        padding: 15px 5px;
+    }
+
+    .link-style:hover {
+        color: #064e3b;
+        background-color: #e8f5e9;
+    }
+
+
+    /* =========================
+       Background Overlay
+    ========================= */
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+
+        background-color: rgba(0, 0, 0, 0.45);
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+
+        z-index: 1000;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+
+    /* Show Overlay */
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* Stop Background Scrolling */
+
+    body.menu-open {
+        overflow: hidden;
     }
 
 

@@ -23,7 +23,7 @@
 
             <!-- Mobile Menu Toggle -->
             <button class="menu-toggle" id="menu-toggle"
-                aria-label="Open Navigation Menu"
+                aria-label="Toggle Navigation Menu"
                 aria-expanded="false">
                 ☰
             </button>
@@ -55,6 +55,10 @@
         </nav>
 
 
+        <!-- Background Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+
+
         <div class="banner">
 
             <h1>
@@ -75,13 +79,13 @@
         <div class="main">
 
             <img src="images/cover pic.jpg" alt="Madrasha">
-            <h3>Satrabash</h3>
+            <h3>Hostel</h3>
 
             <img src="images/madrasa.jpg" alt="Madrasha Building">
             <h3>Madrasha Building</h3>
 
-            <img src="./images/muhtamin.jpeg" alt="Muhtamin">
-            <h3>Muhtamin Saheb</h3>
+            <img src="./images/muhtamin.jpeg" alt="Muhtamim">
+            <h3>Muhtamim Saheb</h3>
 
         </div>
 
@@ -100,41 +104,64 @@
     <!-- JavaScript -->
     <script>
 
-        // Select Menu Button
+        // Select Elements
         const menuToggle = document.getElementById('menu-toggle');
-
-        // Select Navigation Menu
         const navMenu = document.getElementById('nav-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
 
 
-        // Open and Close Mobile Menu
-        menuToggle.addEventListener('click', function() {
+        // Open and Close Menu
+        function toggleMenu() {
 
-            navMenu.classList.toggle('active');
+            const isOpen = navMenu.classList.toggle('active');
 
-            const isOpen = navMenu.classList.contains('active');
+            menuOverlay.classList.toggle('active', isOpen);
 
-            menuToggle.innerHTML = isOpen ? '✕' : '☰';
+            document.body.classList.toggle('menu-open', isOpen);
 
             menuToggle.setAttribute('aria-expanded', isOpen);
 
-        });
+        }
 
 
-        // Close Menu After Clicking a Navigation Link
+        // Close Menu
+        function closeMenu() {
+
+            navMenu.classList.remove('active');
+
+            menuOverlay.classList.remove('active');
+
+            document.body.classList.remove('menu-open');
+
+            menuToggle.setAttribute('aria-expanded', 'false');
+
+        }
+
+
+        // Toggle Button Click
+        menuToggle.addEventListener('click', toggleMenu);
+
+
+        // Close Menu by Clicking Outside
+        menuOverlay.addEventListener('click', closeMenu);
+
+
+        // Close Menu After Clicking a Link
         const navLinks = document.querySelectorAll('.link-style');
 
         navLinks.forEach(function(link) {
 
-            link.addEventListener('click', function() {
+            link.addEventListener('click', closeMenu);
 
-                navMenu.classList.remove('active');
+        });
 
-                menuToggle.innerHTML = '☰';
 
-                menuToggle.setAttribute('aria-expanded', 'false');
+        // Close Menu by Pressing Escape
+        document.addEventListener('keydown', function(event) {
 
-            });
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
 
         });
 
