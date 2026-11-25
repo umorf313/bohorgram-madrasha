@@ -129,6 +129,27 @@
         </div>
 
     </section>
+    <section class="statistics">
+    <div class="stat-card">
+        <h2 class="stat-number" data-target="1969">০</h2>
+        <p>প্রতিষ্ঠার সাল</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 class="stat-number" data-target="500">০</h2>
+        <p>মোট শিক্ষার্থী</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 class="stat-number" data-target="29">০</h2>
+        <p>মোট শিক্ষক</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 class="stat-number" data-target="8">০</h2>
+        <p>চালু থাকা বিভাগ</p>
+    </div>
+</section>
 
 </main>
 
@@ -207,7 +228,57 @@
         });
 
     </script>
+<script>
+    const statNumbers = document.querySelectorAll(".stat-number");
 
+    // ইংরেজি অঙ্ককে বাংলা অঙ্কে রূপান্তর
+    function toBanglaNumber(number) {
+        const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+
+        return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
+    }
+
+    // সংখ্যা ০ থেকে নির্দিষ্ট মান পর্যন্ত বাড়ানো
+    function animateCount(element) {
+        const target = Number(element.dataset.target);
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentNumber = Math.floor(target * progress);
+
+            element.textContent = toBanglaNumber(currentNumber);
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                element.textContent = toBanglaNumber(target);
+            }
+        }
+
+        requestAnimationFrame(updateCount);
+    }
+
+    // Statistics Section স্ক্রিনে এলে অ্যানিমেশন চালু হবে
+    const statisticsSection = document.querySelector(".statistics");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                statNumbers.forEach(number => animateCount(number));
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    if (statisticsSection) {
+        observer.observe(statisticsSection);
+    }
+</script>
 </body>
 
 </html>
