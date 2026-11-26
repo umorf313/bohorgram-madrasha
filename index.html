@@ -2,11 +2,6 @@
 <html lang="bn">
 
 <head>
-<!-- Bengali Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Character Encoding -->
     <meta charset="UTF-8">
 
@@ -25,9 +20,13 @@
     <!-- Author -->
     <meta name="author" content="Jamia Islamia Bohorgram">
 
+    <!-- Bengali Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -42,14 +41,14 @@
                 <span>Jamia Islamia Bohorgram</span>
             </div>
 
-
             <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menu-toggle"
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
                 aria-label="Toggle Navigation Menu"
                 aria-expanded="false">
                 ☰
             </button>
-
 
             <!-- Navigation Menu -->
             <ul class="nav-style" id="nav-menu">
@@ -68,7 +67,6 @@
 
             </ul>
 
-
             <!-- Donation Button -->
             <button class="donate-button" id="donate-button">
                 Donate
@@ -76,84 +74,88 @@
 
         </nav>
 
-
         <!-- Background Overlay -->
         <div class="menu-overlay" id="menu-overlay"></div>
 
     </header>
 
 
-    <!-- Hero Section -->
+    <main>
 
-<main>
+        <!-- Hero Section -->
+        <section class="hero">
 
-    <section class="hero">
+            <div class="hero-overlay"></div>
 
-        <div class="hero-overlay"></div>
+            <div class="hero-content">
 
-        <div class="hero-content">
+                <span class="hero-welcome">
+                    WELCOME TO
+                </span>
 
-            <span class="hero-welcome">
-                WELCOME TO
-            </span>
+                <h1 class="madrasha-name">
+                    জামিয়া ইসলামিয়া বহরগ্রাম
+                </h1>
 
-            <h1 class="madrasha-name">
-    জামিয়া ইসলামিয়া বহরগ্রাম
-</h1>
+                <p class="hero-location">
+                    গোলাপগঞ্জ, সিলেট
+                </p>
 
-<p class="hero-location">
-    গোলাপগঞ্জ, সিলেট
-</p>
+                <h3>
+                    An Institution of Islamic Knowledge and Excellence
+                </h3>
 
-            <h3>
-                An Institution of Islamic Knowledge and Excellence
-            </h3>
+                <p class="hero-description">
+                    ইসলামী শিক্ষা, নৈতিকতা ও আদর্শের সমন্বয়ে
+                    জ্ঞানভিত্তিক প্রজন্ম গঠনে আমরা প্রতিশ্রুতিবদ্ধ।
+                </p>
 
-            <p class="hero-description">
-    ইসলামী শিক্ষা, নৈতিকতা ও আদর্শের সমন্বয়ে
-    জ্ঞানভিত্তিক প্রজন্ম গঠনে আমরা প্রতিশ্রুতিবদ্ধ।
-</p>
+                <div class="hero-buttons">
 
-            <div class="hero-buttons">
+                    <a href="./about.html" class="about-btn">
+                        About Our Madrasha
+                    </a>
 
-                <a href="./about.html" class="about-btn">
-                    About Our Madrasha
-                </a>
+                    <a href="./admission.html" class="admission-btn">
+                        Admission Information
+                    </a>
 
-                <a href="./admission.html" class="admission-btn">
-                    Admission Information
-                </a>
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
-    <section class="statistics">
-    <div class="stat-card">
-        <h2 class="stat-number" data-target="1969">০</h2>
-        <p>প্রতিষ্ঠার সাল</p>
-    </div>
-
-    <div class="stat-card">
-        <h2 class="stat-number" data-target="500">০</h2>
-        <p>মোট শিক্ষার্থী</p>
-    </div>
-
-    <div class="stat-card">
-        <h2 class="stat-number" data-target="29">০</h2>
-        <p>মোট শিক্ষক</p>
-    </div>
-
-    <div class="stat-card">
-        <h2 class="stat-number" data-target="8">০</h2>
-        <p>চালু থাকা বিভাগ</p>
-    </div>
-</section>
-
-</main>
+        </section>
 
 
+        <!-- Statistics Section -->
+        <section class="statistics">
+
+            <div class="stat-card">
+                <h2 class="stat-number" data-target="1969">০</h2>
+                <p>প্রতিষ্ঠার সাল</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="stat-number" data-target="500">০</h2>
+                <p>মোট শিক্ষার্থী</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="stat-number" data-target="29">০</h2>
+                <p>মোট শিক্ষক</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="stat-number" data-target="8">০</h2>
+                <p>চালু থাকা বিভাগ</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
     <footer class="footer">
 
         Jamia Islamia Bohorgram
@@ -163,9 +165,8 @@
     </footer>
 
 
-    <!-- JavaScript -->
+    <!-- Mobile Navigation JavaScript -->
     <script>
-
         // Select Elements
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
@@ -226,59 +227,77 @@
             }
 
         });
-
     </script>
-<script>
-    const statNumbers = document.querySelectorAll(".stat-number");
 
-    // ইংরেজি অঙ্ককে বাংলা অঙ্কে রূপান্তর
-    function toBanglaNumber(number) {
-        const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
 
-        return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
-    }
+    <!-- Statistics Count-Up Animation -->
+    <script>
+        const statNumbers = document.querySelectorAll(".stat-number");
 
-    // সংখ্যা ০ থেকে নির্দিষ্ট মান পর্যন্ত বাড়ানো
-    function animateCount(element) {
-        const target = Number(element.dataset.target);
-        const duration = 1800;
-        const startTime = performance.now();
+        // ইংরেজি অঙ্ককে বাংলা অঙ্কে রূপান্তর
+        function toBanglaNumber(number) {
 
-        function updateCount(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const currentNumber = Math.floor(target * progress);
+            const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
 
-            element.textContent = toBanglaNumber(currentNumber);
+            return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
 
-            if (progress < 1) {
-                requestAnimationFrame(updateCount);
-            } else {
-                element.textContent = toBanglaNumber(target);
-            }
         }
 
-        requestAnimationFrame(updateCount);
-    }
 
-    // Statistics Section স্ক্রিনে এলে অ্যানিমেশন চালু হবে
-    const statisticsSection = document.querySelector(".statistics");
+        // সংখ্যা ০ থেকে নির্দিষ্ট মান পর্যন্ত বাড়ানো
+        function animateCount(element) {
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                statNumbers.forEach(number => animateCount(number));
-                observer.unobserve(entry.target);
+            const target = Number(element.dataset.target);
+            const duration = 1800;
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const currentNumber = Math.floor(target * progress);
+
+                element.textContent = toBanglaNumber(currentNumber);
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = toBanglaNumber(target);
+                }
+
             }
+
+            requestAnimationFrame(updateCount);
+
+        }
+
+
+        // Statistics Section স্ক্রিনে এলে অ্যানিমেশন চালু হবে
+        const statisticsSection = document.querySelector(".statistics");
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    statNumbers.forEach(number => animateCount(number));
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.3
         });
-    }, {
-        threshold: 0.3
-    });
 
-    if (statisticsSection) {
-        observer.observe(statisticsSection);
-    }
-</script>
+
+        if (statisticsSection) {
+            observer.observe(statisticsSection);
+        }
+    </script>
+
 </body>
-
 </html>
