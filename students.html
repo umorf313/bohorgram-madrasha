@@ -1,65 +1,232 @@
-<!DOCTYPE html> 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bn">
+
 <head>
+    <!-- Character Encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive Website -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bohorgram-Madrasha</title>
+
+    <!-- Website Title -->
+    <title>জামিয়া ইসলামিয়া বহরগ্রাম | Jamia Islamia Bohorgram</title>
+
+    <!-- Website Description -->
+    <meta name="description" content="জামিয়া ইসলামিয়া বহরগ্রাম, গোলাপগঞ্জ, সিলেট। একটি আদর্শ ইসলামী শিক্ষাপ্রতিষ্ঠান।">
+
+    <!-- Website Keywords -->
+    <meta name="keywords" content="Jamia Islamia Bohorgram, Madrasha, Islamic Education, Golapganj, Sylhet">
+
+    <!-- Author -->
+    <meta name="author" content="Jamia Islamia Bohorgram">
+
+    <!-- Bengali Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <header>
+
         <nav class="navbar">
 
-    <!-- Website Logo and Name -->
+            <!-- Website Logo and Name -->
             <div class="logo">
-             <img src="./images/logo.jpg" alt="Jamia Islamia Bohorgram Logo">
-             <span>Jamia Islamia Bohorgram</span>
+                <img src="./images/logo.jpg" alt="Jamia Islamia Bohorgram Logo">
+                <span>Jamia Islamia Bohorgram</span>
             </div>
 
-    <!-- Hamburger Menu Button -->
-            <button class="menu-toggle" id="menu-toggle">
-               ☰
+            <!-- Mobile Menu Toggle -->
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Toggle Navigation Menu"
+                aria-expanded="false">
+                ☰
             </button>
 
-    <!-- Navigation Menu -->
+            <!-- Navigation Menu -->
             <ul class="nav-style" id="nav-menu">
+
                 <li><a class="link-style" href="./index.html">Home</a></li>
+
                 <li><a class="link-style" href="./students.html">Students</a></li>
-                <li><a class="link-style" href="">Teachers</a></li>
-                <li><a class="link-style" href="">Exams Result</a></li>
+
+                <li><a class="link-style" href="./teachers.html">Teachers</a></li>
+
+                <li><a class="link-style" href="./results.html">Results</a></li>
+
                 <li><a class="link-style" href="./photos.html">Photos</a></li>
-                <li><a class="link-style" href="">Videos</a></li>
+
+                <li><a class="link-style" href="./videos.html">Videos</a></li>
+
             </ul>
 
-    <!-- Donation Button -->
+            <!-- Donation Button -->
             <button class="donate-button" id="donate-button">
-            Donate
+                Donate
             </button>
 
         </nav>
-        <div class="banner">
-            <h1>Jamia Islamia <span class="alada">Bohorgram</span>, Gulapganj, Sylhet</h1>
-            <h3>A Model University in the World</h3>
-        </div>
-    </header>
-    <main>
-        <button class="button"><a href="">Class - 1</a></button>
-        <button class="button"><a href="">Class - 2</a></button>
-        <button class="button"><a href="">Class - 3</a></button>
-        <button class="button"><a href="">Class - 4</a></button>
-        <button class="button"><a href="">Class - 5</a></button>
-        <button class="button"><a href="">Class - 6</a></button>
-        <button class="button"><a href="">Class - 7</a></button>
-        <button class="button"><a href="">Class - 8</a></button>
-        <button class="button"><a href="">Class - 9</a></button>
-        <button class="button"><a href="">Class - 10</a></button>
 
+        <!-- Background Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+
+    </header>
+
+
+    <main>
+        <img src="./images/coming.jpg" alt="">
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
+
         Jamia Islamia Bohorgram
-        <br>Gulapganj, Sylhet.
+        <br>
+        Gulapganj, Sylhet.
+
     </footer>
-    
+
+
+    <!-- Mobile Navigation JavaScript -->
+    <script>
+        // Select Elements
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+
+        // Open and Close Menu
+        function toggleMenu() {
+
+            const isOpen = navMenu.classList.toggle('active');
+
+            menuOverlay.classList.toggle('active', isOpen);
+
+            document.body.classList.toggle('menu-open', isOpen);
+
+            menuToggle.setAttribute('aria-expanded', isOpen);
+
+        }
+
+
+        // Close Menu
+        function closeMenu() {
+
+            navMenu.classList.remove('active');
+
+            menuOverlay.classList.remove('active');
+
+            document.body.classList.remove('menu-open');
+
+            menuToggle.setAttribute('aria-expanded', 'false');
+
+        }
+
+
+        // Toggle Button Click
+        menuToggle.addEventListener('click', toggleMenu);
+
+
+        // Close Menu by Clicking Outside
+        menuOverlay.addEventListener('click', closeMenu);
+
+
+        // Close Menu After Clicking a Link
+        const navLinks = document.querySelectorAll('.link-style');
+
+        navLinks.forEach(function(link) {
+
+            link.addEventListener('click', closeMenu);
+
+        });
+
+
+        // Close Menu by Pressing Escape
+        document.addEventListener('keydown', function(event) {
+
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+
+        });
+    </script>
+
+
+    <!-- Statistics Count-Up Animation -->
+    <script>
+        const statNumbers = document.querySelectorAll(".stat-number");
+
+        // ইংরেজি অঙ্ককে বাংলা অঙ্কে রূপান্তর
+        function toBanglaNumber(number) {
+
+            const banglaDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+
+            return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
+
+        }
+
+
+        // সংখ্যা ০ থেকে নির্দিষ্ট মান পর্যন্ত বাড়ানো
+        function animateCount(element) {
+
+            const target = Number(element.dataset.target);
+            const duration = 1800;
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const currentNumber = Math.floor(target * progress);
+
+                element.textContent = toBanglaNumber(currentNumber);
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = toBanglaNumber(target);
+                }
+
+            }
+
+            requestAnimationFrame(updateCount);
+
+        }
+
+
+        // Statistics Section স্ক্রিনে এলে অ্যানিমেশন চালু হবে
+        const statisticsSection = document.querySelector(".statistics");
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    statNumbers.forEach(number => animateCount(number));
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.3
+        });
+
+
+        if (statisticsSection) {
+            observer.observe(statisticsSection);
+        }
+    </script>
+
 </body>
 </html>
