@@ -926,3 +926,169 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* ==============================
+   Education Departments Section
+============================== */
+
+.departments-section {
+    padding: 70px 20px;
+    background: #ffffff;
+}
+
+.departments-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Section Heading */
+
+.departments-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.departments-subtitle {
+    display: inline-block;
+    color: #198754;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.departments-heading h2 {
+    font-size: 32px;
+    color: #173d2b;
+    margin-bottom: 15px;
+}
+
+.departments-heading p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Departments Grid */
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Department Card */
+
+.department-card {
+    background: #f8faf8;
+    border: 1px solid #e4eee7;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: #198754;
+}
+
+/* Department Icon */
+
+.department-icon {
+    width: 65px;
+    height: 65px;
+    background: #e4f3e9;
+    color: #198754;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    margin: 0 auto 20px;
+}
+
+/* Department Title */
+
+.department-card h3 {
+    font-size: 19px;
+    color: #173d2b;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Department Description */
+
+.department-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ==============================
+   Tablet Responsive
+============================== */
+
+@media (max-width: 992px) {
+
+    .departments-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+}
+
+/* ==============================
+   Mobile Responsive
+============================== */
+
+@media (max-width: 576px) {
+
+    .departments-section {
+        padding: 45px 15px;
+    }
+
+    .departments-heading {
+        margin-bottom: 30px;
+    }
+
+    .departments-heading h2 {
+        font-size: 26px;
+    }
+
+    .departments-heading p {
+        font-size: 14px;
+    }
+
+    .departments-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .department-card {
+        padding: 20px 12px;
+        border-radius: 10px;
+    }
+
+    .department-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .department-card h3 {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .department-card p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+}
